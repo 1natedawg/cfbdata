@@ -11,4 +11,3 @@ for each stat:
     apply multiplier in config.json to determine statistical weight
     add final value to bucket total and overall total
 
-output sortable csv# cfbdata

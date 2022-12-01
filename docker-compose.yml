@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  db:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: test
+    ports:
+      - '27017:27017'
+    expose:
+      - '27017'
+    volumes:
+      - type: bind
+        source: ~/Documents/Code/cfbdata/db/
+        target: /data/db
+      - type: bind
+        source: ~/Documents/Code/cfbdata/db/config
+        target: /data/configdb
+
+
+  # app:
+  #   image: cfbdata:latest
+  #   restart: "no"
+  #   volumes:
+  #     - type: bind
+  #       source: ~/Documents/Code/cfbdata/proc/
+  #       target: /app
